@@ -1,28 +1,40 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-
 body {
-  background-color: #fff;
-  color: black;
+  background: linear-gradient(
+    to right,
+    #181616,
+    #000000
+  ); /* Dark mode gradient */
+  color: rgb(248, 241, 241);
   max-width: 800px;
-  margin-inline: auto;
-  background-image: url("https://th.bing.com/th/id/OIP.lYGarWYmAF2TNw-I9H6DFwHaCu?w=322&h=128&c=7&r=0&o=5&dpr=1.25&pid=1.7");
-  /* background-position: fixed; */
+  margin: 0 auto;
   background-position: center center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   z-index: -1;
 }
 
 .box-shadow {
-  box-shadow: 0px 1px 12px 0px rgba(112, 112, 112, 0.75);
-  -webkit-box-shadow: 0px 1px 12px 0px rgba(112, 112, 112, 0.75);
-  -moz-box-shadow: 0px 1px 12px 0px rgba(112, 112, 112, 0.75);
-  border-radius:15px;
+  box-shadow: 0 1px 12px 0 rgba(112, 112, 112, 0.75);
+  border-radius: 15px;
 }
 
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  body {
+    max-width: 90%;
+  }
+}
+
+/* Media query for even smaller screens, like mobile devices */
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+}

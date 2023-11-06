@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import moment from 'moment';
+import React from "react";
+import styled from "styled-components";
+import moment from "moment";
 
 function Forecast({ data }) {
   const currentWeather = data.forecastday[0].hour;
@@ -8,11 +8,11 @@ function Forecast({ data }) {
   return (
     <StyledForecast>
       <h2>Current Weather</h2>
-      <div className='box-shadow current-forecast'>
+      <div className="box-shadow current-forecast">
         {currentWeather.map((weather) => (
-          <div className='card box-shadow' key={weather.time_epoch}>
-            <span>{moment(weather.time).format('h:mm:ss a')}</span>
-            <img src={weather.condition.icon} alt='weather icon' />
+          <div className="card box-shadow" key={weather.time_epoch}>
+            <span>{moment(weather.time).format("h:mm:ss a")}</span>
+            <img src={weather.condition.icon} alt="weather icon" />
             <p>{weather.temp_c} °C</p>
           </div>
         ))}
@@ -22,12 +22,12 @@ function Forecast({ data }) {
       {data.forecastday.map((futureWeather) => (
         <div
           key={futureWeather.date_epoch}
-          className='box-shadow current-forecast future-forecast'
+          className="box-shadow current-forecast future-forecast"
         >
           {futureWeather.hour.map((weather) => (
-            <div className='card box-shadow' key={weather.time_epoch}>
-              <span>{moment(weather.time).format('h:mm:ss a')}</span>
-              <img src={weather.condition.icon} alt='weather icon' />
+            <div className="card box-shadow" key={weather.time_epoch}>
+              <span>{moment(weather.time).format("h:mm:ss a")}</span>
+              <img src={weather.condition.icon} alt="weather icon" />
               <p>{weather.temp_c} °C</p>
             </div>
           ))}
@@ -45,7 +45,8 @@ const StyledForecast = styled.div`
   .current-forecast {
     padding: 20px;
     display: flex;
-    overflow-y: hidden;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 20px; /* Add padding from the sides */
 
     .card {
       padding: 10px;
